@@ -414,5 +414,103 @@ console.log(introducor("Tejas", "Nagpur"));
 // console.log(filter([1, 2, 3, 4, 5, 6], 3));
 
 
-const nums = [1, 2, 3, 4, 5, 6];
-console.log(nums.filter(num => num > 2))
+// const nums = [1, 2, 3, 4, 5, 6];
+// console.log(nums.filter(num => num > 2))
+
+
+// const actors = [
+//     {name: "Jhonny", netWorth:200000000},
+//     {name: "Amber", netWorth:10},
+//     {name: "Tejas", netWorth:1000000000000},
+//     {name: "Siya", netWorth:10000000000},
+//     {name: "Param", netWorth:1000},
+//     {name: "Yash", netWorth:1000000000},
+// ];
+
+// let result = actors.filter(actor => actor.netWorth > 10);
+
+// let names = result.map(actor => actor.name).join(", ");
+// console.log(names);
+
+
+// document.innerHTML = `<h1>${result[0].name}</h1>`
+
+
+
+
+// Reduce - sum of ...
+
+// Sum of all netWorth
+// SUM: Think Reduce
+// Reduce takes an function as a arguments.
+// Reduce loops and give you back a accumulator.
+
+
+
+// const nums = [1, 2, 3, 4, 5]
+// const result = nums.reduce(function (pre, curr){
+//     return pre + curr;
+// })
+
+// const result = nums.reduce((pre, curr) => pre + curr);
+// console.log(result);
+
+// Reduce Multiply
+
+// const result = nums.reduce((pre, curr) => pre * curr);
+// console.log(result);
+
+
+
+// Dom Manuplation
+
+
+// let message = "We are the Best Programmer!";
+
+
+// let coder = document.getElementById("title");
+// console.log("Before: ", coder.innerText);
+// title.innerText = message;
+// console.log("After: ", coder.innerText);
+
+// title.innerHTML = `<p>Hello ${message}</p>`
+// title.style.color = "red";
+
+console.log('hello')
+
+let titleDiv = document.getElementById('title')
+
+console.log('before: ', titleDiv.innerText)
+
+let message = 'Square Color Counter 🚀'
+
+titleDiv.innerText = message;
+
+console.log('after: ', titleDiv.innerText)
+
+titleDiv.innerHTML = `<p>${message}</p>`
+
+titleDiv.style.backgroundColor = 'blue'
+
+const squares = document.querySelectorAll('.colorSquare')
+
+// forEach
+const timesClicked = { 'red': 0, 'yellow': 0, 'green': 0 }
+squares.forEach(square => {
+    square.onclick = () => {
+        timesClicked[square.value] += 1
+        square.innerText = timesClicked[square.value]
+    }
+})
+function clearScores() {
+    timesClicked.red = 0
+    timesClicked.yellow = 0
+    timesClicked.green = 0
+    squares.forEach(square => {
+        square.innerText = ''
+    })
+}
+
+const clearGameBtn = document.getElementById('clear-game')
+clearGameBtn.onclick = () => clearScores()
+
