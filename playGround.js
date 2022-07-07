@@ -138,7 +138,7 @@ function calculateFoodTotalAmount(food, tip) {
 // console.log(sumArrow(50, 10));
 
 
-/* 
+/*
   TODO: Write a function that sums two numbers
   TODO: Write a function that subtracts two numbers
   TODO: Write a function that divides two numbers.
@@ -190,15 +190,15 @@ result = getDiv(10,20);
 console.log("The Div of two Number is ",result);
 */
 
-/* 4. 
+/* 4.
 // function getMul(a,b){
-//     return a * b; 
+//     return a * b;
 // }
 
 // result = getMul(10,20);
 // console.log("The Muyltiplacation is", result);
 
-// const getMul = (a,b) => a * b; 
+// const getMul = (a,b) => a * b;
 // result = getMul(10,20);
 // console.log("The Multiplacation is", result);
 
@@ -476,41 +476,161 @@ console.log(introducor("Tejas", "Nagpur"));
 // title.innerHTML = `<p>Hello ${message}</p>`
 // title.style.color = "red";
 
-console.log('hello')
+// console.log('hello')
 
-let titleDiv = document.getElementById('title')
+// let titleDiv = document.getElementById('title')
 
-console.log('before: ', titleDiv.innerText)
+// console.log('before: ', titleDiv.innerText)
 
-let message = 'Square Color Counter 🚀'
+// let message = 'Square Color Counter 🚀'
 
-titleDiv.innerText = message;
+// titleDiv.innerText = message;
 
-console.log('after: ', titleDiv.innerText)
+// console.log('after: ', titleDiv.innerText)
 
-titleDiv.innerHTML = `<p>${message}</p>`
+// titleDiv.innerHTML = `<p>${message}</p>`
 
-titleDiv.style.backgroundColor = 'blue'
+// titleDiv.style.backgroundColor = 'blue'
 
-const squares = document.querySelectorAll('.colorSquare')
+// const squares = document.querySelectorAll('.colorSquare')
 
-// forEach
-const timesClicked = { 'red': 0, 'yellow': 0, 'green': 0 }
-squares.forEach(square => {
-    square.onclick = () => {
-        timesClicked[square.value] += 1
-        square.innerText = timesClicked[square.value]
-    }
-})
-function clearScores() {
-    timesClicked.red = 0
-    timesClicked.yellow = 0
-    timesClicked.green = 0
-    squares.forEach(square => {
-        square.innerText = ''
-    })
+// // forEach
+// const timesClicked = { 'red': 0, 'yellow': 0, 'green': 0 }
+// squares.forEach(square => {
+//     square.onclick = () => {
+//         timesClicked[square.value] += 1
+//         square.innerText = timesClicked[square.value]
+//     }
+// })
+// function clearScores() {
+//     timesClicked.red = 0
+//     timesClicked.yellow = 0
+//     timesClicked.green = 0
+//     squares.forEach(square => {
+//         square.innerText = ''
+//     })
+// }
+
+// const clearGameBtn = document.getElementById('clear-game')
+// clearGameBtn.onclick = () => clearScores()
+
+
+
+// Tip Calculator
+
+
+/* 
+🌟 APP: Tip Calculator
+
+These are the 3 functions you must use 👇
+=========================================
+calculateBill()
+increasePeople()
+decreasePeople()
+
+These functions are hard coded in the HTML. So, you can't change their names.
+
+These are all the DIV ID's you're gonna need access to 👇
+========================================================
+#1 ID 👉 'billTotalInput' = User input for bill total
+#2 ID 👉 'tipInput' = User input for tip
+#3 ID 👉 'numberOfPeople' = Current number of people you're splitting the bill between
+#4 ID 👉 'perPersonTotal' = Total dollar value owed per person
+*/
+
+// Get global access to all inputs / divs here (you'll need them later 😘)
+// bill input, tip input, number of people div, and per person total div
+
+/*
+const billInput = document.getElementById("billTotalInput");
+const tipInput = document.getElementById("tipInput");
+const numberofPeopleDiv = document.getElementById("numberOfPeople");
+const perPersonTotalDiv = document.getElementById("perPersonTotal");
+
+
+
+// Get number of people from number of people div
+let numberOfPeople = Number(numberofPeopleDiv.innerText);
+
+
+// ** Calculate the total bill per person **
+const calculateBill = () => {
+    // console.log(numberOfPeople);
+    // console.log(billInput.value);
+    // get bill from user input & convert it into a number
+    const bill = Number(billInput.value);
+    console.log(bill);
+
+    // get the tip from user & convert it into a percentage (divide by 100)
+    const tipPercentage = Number(tipInput.value) / 100;
+    // console.log(tipPercentage);
+
+    // get the total tip amount
+    const tipAmount = bill * tipPercentage;
+    console.log({ tipAmount });
+
+
+    // calculate the total (tip amount + bill)
+    const total = tipAmount + bill;
+    console.log(total);
+
+
+    // calculate the per person total (total divided by number of people)
+    const perPersonTotal = total / numberOfPeople
+    console.log({ perPersonTotal });
+
+    // update the perPersonTotal on DOM & show it to user
+    perPersonTotalDiv.innerText = `$${perPersonTotal.toFixed(2).toLocaleString('en-US')}`;
 }
 
-const clearGameBtn = document.getElementById('clear-game')
-clearGameBtn.onclick = () => clearScores()
+// ** Splits the bill between more people **
+const increasePeople = () => {
+    // increment the amount of people
+    numberOfPeople += 1;
+
+    // update the DOM with the new number of people
+    numberofPeopleDiv.innerText = numberOfPeople;
+
+    // calculate the bill based on the new number of people
+    calculateBill();
+}
+
+// ** Splits the bill between fewer people **
+const decreasePeople = () => {
+    // guard clause
+    // if amount is 1 or less simply return
+    // (a.k.a you can't decrease the number of people to 0 or negative!)
+    if (numberOfPeople <= 1) {
+        alert("Hey! You can't go Less Than 1%");
+        return;
+    }
+
+    // decrement the amount of people
+    numberOfPeople -= 1;
+
+
+    // update the DOM with the new number of people
+    numberofPeopleDiv.innerText = numberOfPeople;
+
+
+    // calculate the bill based on the new number of people
+    calculateBill();
+}
+
+*/
+
+
+// Practice
+
+// const randomFruits = (fruits) => {
+//     const randomNumber = Math.floor(Math.random() * fruits.length);
+//     return fruits[randomNumber];
+// }
+
+// fruits = ["Apple", "Banana", "Cherry", "DrumStick"];
+// console.log(randomFruits(fruits));
+
+
+
+
 
